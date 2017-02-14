@@ -2,7 +2,8 @@
 ##############################################################################
 # Exercise 5: Writing the main program
 ##############################################################################
-
+#
+#try:
 # Import the myPythonFunctions module
 from myPythonFunctions import getUserPoint, updateUserPoints, genQuestion
 # Prompt for user name
@@ -19,11 +20,15 @@ if newUser == True:
 # Step 1    
 userChoice = 0
 # Step 2
+userScore = int(userScore)
 while userChoice != "-1":
     # Step 3
-    userScore = userScore + genQuestion()
+    userScore = int(userScore) + int(genQuestion())
     # Step 4
     userChoice = input("Enter 0 to continue or -1 to quit: ")
     
 # Update user score if the user quits
 updateUserPoints(newUser, userName, userScore)
+
+#except Exception as e:
+#    print("An error has occured. The program will exit.")
